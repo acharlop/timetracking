@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
 # my added stuff
 get "/", to: "site#home"
+get "/projects" => "projects#index"
+
+
 get "/contact", to: "site#contact"
 get "/say_name/:name", to: "site#say_name"
 
 get "/calculator", to: "site#calculator"
 post "/calculator", to: "site#calculate"
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
