@@ -1,8 +1,11 @@
 <table>
 	<% @projects.each do |project| %>
 		<tr>
-			<td><%= project.id %></td>
 			<td><%= project.name %></td>
+			<% unless project.description.nil?  %>
+				<td>-</td>
+				<td><%= project.description %></td>
+			<% end %>
 		</tr>
 	<% end %>
 </table>
