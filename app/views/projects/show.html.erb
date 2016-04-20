@@ -1,0 +1,5 @@
+<h2>Project: <%= @my_project.name %></h2>
+<% unless @my_project.description.nil?  %>
+	<h3>Project Description - 
+	<%= @my_project.description %></h3>
+<% end %>
