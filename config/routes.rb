@@ -8,4 +8,6 @@ post "/projects" => "projects#create"
 
 # must be at the bottom
 get "/projects/:id" => "projects#show"
+get "/projects/:id/time_entries" => "time_entries#show"
+
 end
