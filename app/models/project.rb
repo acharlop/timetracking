@@ -6,4 +6,10 @@ class Project < ActiveRecord::Base
 						length: { maximum: 50 }, 
 						format: { with: /\A[\w ]*\z/}#, #allow_blank: false}
 # starts with letter then only space alphanumeric
+
+	def self.clean_old
+		projects = self.where "updated_at < ?", Time.now - 1.week
+		projects.destroy_all
+	end
+
 end
