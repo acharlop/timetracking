@@ -1,0 +1,27 @@
+<%= form_for [@project, @entry] do |f| %>
+	<div>
+	  <% @entry.errors[:hours].each do |err| %>
+			<%= err %>
+	  <% end %>
+	  <%= f.label :hours %>
+	  <%= f.number_field :hours %>
+  </div>
+	<div>
+	  <% @entry.errors[:minutes].each do |err| %>
+			<%= err %>
+	  <% end %>
+	  <%= f.label :minutes %>
+	  <%= f.number_field :minutes %>
+  </div>
+	<div>
+	  <% @entry.errors[:date].each do |err| %>
+			<%= err %>
+	  <% end %>
+	  <%= f.label :date %>
+	  <%= f.date_field :date %>
+  </div>
+
+  <div>
+  	<%= f.submit "Save" %>
+  </div>
+<% end %>

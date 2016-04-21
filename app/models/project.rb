@@ -4,7 +4,6 @@ class Project < ActiveRecord::Base
 	validates :name, presence: true, 
 						uniqueness: true, 
 						length: { maximum: 50 }, 
-						format: { with: /\A[\w ]*\z/}, #allow_blank: false}
-						name: true
+						format: { with: /\A[\w ]*\z/}#, #allow_blank: false}
 # starts with letter then only space alphanumeric
 end
