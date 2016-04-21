@@ -8,7 +8,7 @@ class Project < ActiveRecord::Base
 # starts with letter then only space alphanumeric
 
 	def self.clean_old
-		projects = self.where "updated_at < ?", Time.now - 1.week
+		projects = self.where "updated_at < ?", 1.week.ago
 		projects.destroy_all
 	end
 
