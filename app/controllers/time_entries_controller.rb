@@ -13,8 +13,10 @@ class TimeEntriesController < ApplicationController
 		@entry = @project.time_entries.new(entry_params)
 
 		if @entry.save
+			flash[:notice] = "Entry created successfully"
 			redirect_to action: "index", controller: "time_entries", project_id: @project.id
 		else
+			flash[:alert] = "** Error creating entry **"
 			render "new"
 		end
 	end
@@ -30,9 +32,11 @@ class TimeEntriesController < ApplicationController
 		@entry = @project.time_entries.find params[:id]
 		
 		if @entry.update(entry_params)
+			flash[:notice] = "Entry updated successfully"
 			redirect_to action: "index", controller: "time_entries", project_id: @project.id
 		else
-			render "new"
+			flash[:alert] = "Error updating entry"
+			render "edit"
 		end
 	end
 

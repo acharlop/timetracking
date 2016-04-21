@@ -1,2 +1,6 @@
 <h2>Edit time entry for <%= @project.name %> project</h2>
 <%= render "form" %>
+<br>
+<div>
+	<%= link_to "DELETE THIS ENTRY", project_time_entry_path(@project, @entry), method: "delete", data: {confirm: "Are you sure?"} %>
+</div>

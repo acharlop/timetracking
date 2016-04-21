@@ -1,7 +1,7 @@
 <table>
 	<% @projects.each do |project| %>
 		<tr>
-			<td><%= project.name %></td>
+			<td><%= link_to project.name, project_time_entries_path(project) %></td>
 			<% unless project.description.nil?  %>
 				<td>-</td>
 				<td><%= project.description %></td>
