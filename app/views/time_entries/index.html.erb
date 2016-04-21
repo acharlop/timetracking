@@ -2,6 +2,7 @@
 <ul>
 <% @entries.each do |entry| %>
 	<li>
+		<%= link_to "Edit", project_time_entry_path(@project, entry) %>
 		<strong>Length:</strong> <%= entry.hours %> h <%= entry.minutes %> m, 
 		<strong>Info:</strong> <%= entry.comment %>,
 		<strong>On:</strong> <%= entry.date %>
